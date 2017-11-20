@@ -7,6 +7,22 @@ Feature: Hotel Booking Management - Add Customer
   I want to add my details
 
 
+  Scenario: Save customer with no first name using declarative method
+
+    Given I am in the hotel booking homepage
+    When I set all valid details other than empty firstname
+    And I save details
+    Then I see the customer details are not saved
+
+
+  Scenario: Save customer with no surname name using declarative method
+
+    Given I am in the hotel booking homepage
+    When I set all valid details other than empty surname
+    And I save details
+    Then I see the customer details are not saved
+
+
   Scenario: Save customer details using declarative method
 
     Given I am in the hotel booking homepage
@@ -37,22 +53,6 @@ Feature: Hotel Booking Management - Add Customer
 
     Given I am in the hotel booking homepage
     When I set all valid details other than checkout date
-    And I save details
-    Then I see the customer details are not saved
-
-
-  Scenario: Save customer with no first name using declarative method
-
-    Given I am in the hotel booking homepage
-    When I set all valid details other than empty firstname
-    And I save details
-    Then I see the customer details are not saved
-
-
-  Scenario: Save customer with no surname name using declarative method
-
-    Given I am in the hotel booking homepage
-    When I set all valid details other than empty surname
     And I save details
     Then I see the customer details are not saved
 
